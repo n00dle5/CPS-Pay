@@ -11,8 +11,29 @@ let dataDiv = document.getElementById("data");
 submit.addEventListener("click", () => {
     console.log(school.value, lastname.value, job.value, fte.value);
     getPay(school, lastname, job, fte).then(data => {
-        console.log(data);
-        dataDiv.innerHTML = data;
+        // format the data into a table
+        dataDiv.innerHTML = `
+            <table>
+                <tr>
+                    <th style="padding: 15px">School</th>
+                    <th style="padding: 15px">Full/Part-Time</th>
+                    <th style="padding: 15px">Annual Salary</th>
+                    <th style="padding: 15px">Annual Benefits</th>
+                    <th style="padding: 15px">Job Title</th>
+                    <th style="padding: 15px">Name</th>
+                </tr>
+                ${data.map(person => `
+                    <tr>
+                        <td>${person[0]}</td>
+                        <td>${person[1] == 1 ? "Full-Time" : "Part-Time"}</td>
+                        <td>${person[2]}</td>
+                        <td>${person[3]}</td>
+                        <td>${person[4]}</td>
+                        <td>${person[5]}</td>
+                    </tr>
+                `).join("")}
+            </table>
+        `;
     });
 });
 
