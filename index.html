@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <title>CPS Pay</title>
+</head>
+<body>
+    <!--
+    School (one word)
+    Last Name 
+    Job (All, Teacher, Principal) - drop down
+    FTE (Full-Time, Part-Time) - drop down
+    Feature:
+        - Pages
+        - Search
+        - Sort
+    -->
+
+    <div class="container">
+        <div class="header">
+            <h1>CPS Pay</h1>
+            <p>Search for CPS employees and their salaries</p>
+        </div>
+        <div class="search">
+            <!--
+                Need to add a search bar for school
+                Need to add a search bar for last name
+                Need to add a drop down for job
+                Need to add a drop down for FTE
+            -->
+            <div class="school">
+                <label for="school">School (one word)</label>
+                <input type="text" name="school" id="school" placeholder="e.g. Jones, or Lane">
+            </div>
+            <div class="last-name">
+                <label for="last-name">Last Name</label>
+                <input type="text" name="last-name" id="last-name">
+            </div>
+            <div class="job">
+                <label for="job">Job</label>
+                <select name="job" id="job">
+                    <option value="all">All</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="principal">Principal</option>
+                </select>
+            </div>
+            <div class="fte">
+                <label for="fte">Full/Part-Time</label>
+                <select name="fte" id="fte">
+                    <option value="all">All</option>
+                    <option value="full-time">Full-Time</option>
+                    <option value="part-time">Part-Time</option>
+                </select>
+            </div>
+            <div class="submit">
+                <button>Submit</button>
+            </div>
+        </div>
+        <div class="data">
+            Nothing searched yet :)
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
