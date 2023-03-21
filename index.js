@@ -1,5 +1,5 @@
-// fetch from https://cps-pay.l0stidi0t.repl.co/{school}/{lastname}/{job}/{fte}
-// example: https://cps-pay.l0stidi0t.repl.co/lincoln/Smith/teacher/1
+// fetch from https://sublimetech.adamkockler.dev/{school}/{lastname}/{job}/{fte}
+// example: https://sublimetech.adamkockler.dev/lincoln/Smith/teacher/1
 
 let school = document.getElementById("school");
 let lastname = document.getElementById("last-name");
@@ -38,8 +38,14 @@ submit.addEventListener("click", () => {
 });
 
 async function getPay(school, lastname, job, fte) {
-    let url = `https://cps-pay.l0stidi0t.repl.co/${school.value}/${lastname.value}/${job.value}/${fte.value == "all" ? "all" : (fte.value == "full-time" ? 1 : 0.5)}`;
-    let res = await fetch(url);
+    let requestOptions = {
+        method: 'GET',
+        redirect: 'follow',
+        mode: 'cors'
+    }
+
+    let url = `https://sublimetech.adamkockler.dev/${school.value}/${lastname.value}/${job.value}/${fte.value == "all" ? "all" : (fte.value == "full-time" ? 1 : 0.5)}`;
+    let res = await fetch(url, requestOptions);
     let data = await res.json();
     return data;
 }
