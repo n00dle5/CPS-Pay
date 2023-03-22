@@ -49,7 +49,7 @@ async function getPay(school, lastname, job, fte) {
         lastname.value = "Default";
     }
 
-    let url = `http://l0stidi0t.pythonanywhere.com/${school.value}/${lastname.value}/${job.value}/${fte.value == "all" ? "all" : (fte.value == "full-time" ? 1 : 0.5)}`;
+    let url = `https://l0stidi0t.pythonanywhere.com/${school.value}/${lastname.value}/${job.value}/${fte.value == "all" ? "all" : (fte.value == "full-time" ? 1 : 0.5)}`;
     let res = await fetch(url, requestOptions);
     let data = await res.json();
     return data;
