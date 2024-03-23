@@ -49,7 +49,7 @@ async function getPay(school, lastname, job, fte) {
         lastname.value = "Default";
     }
 
-    let url = `http://52.191.3.72/${school.value}/${lastname.value}/${job.value}/${fte.value == "all" ? "all" : (fte.value == "full-time" ? 1 : 0.5)}`;
+    let url = `https://06062022.xyz/${school.value}/${lastname.value}/${job.value}/${fte.value == "all" ? "all" : (fte.value == "full-time" ? 1 : 0.5)}`;
     let res = await fetch(url, requestOptions);
     let data = await res.json();
     return data;
