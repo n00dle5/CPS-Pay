@@ -1,73 +1,118 @@
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
 }
 
 .search {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100px;
 }
 
 .search input {
-    border-color: rgb(138, 138, 138);
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    padding-left: 10px;
-    padding: 5px;
+  border-color: rgb(138, 138, 138);
+  border-width: 1px;
+  padding-left: 10px;
+  padding: 5px;
 }
 
 .search input:focus {
-    outline: none;
-    box-shadow: 0 0 5px 1px rgba(91, 208, 255, 0.445);
+  outline: none;
+  box-shadow: 0 0 5px 1px rgba(91, 208, 255, 0.445);
 }
 
 .search button {
-    border-radius: 5px;
-    border-style: solid;
-    border: none;
-    padding: 8px;
-    background-color: #4eb5f1;
-    color: white;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
-    text-decoration: none;
-    cursor: pointer;
+  border: none;
+  padding: 8px;
+  background-color: #4eb5f1;
+  color: white;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .search button:hover {
-    background-color: #aee1ff;
-    color: white;
-    text-decoration: none;
+  background-color: #aee1ff;
+  color: white;
+  text-decoration: none;
 }
 
 .search select {
-    border-radius: 5px;
-    border-style: solid;
-    padding: 5px;
-    font-family: 'Montserrat', sans-serif;
-    text-decoration: none;
-    cursor: pointer;
+  padding: 5px;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-top: 1%;
 }
 
 .data {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  table-layout: fixed;
+  overflow-x: auto;
+}
+
+.data table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.data th,
+.data td {
+  padding: 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 600px) {
+  .search {
+    flex-direction: column;
+  }
+
+  .search input,
+  .search select {
     width: 100%;
-    margin-top: 1%;
+  }
+
+  .search button {
+    width: 100%;
+  }
+
+  .header {
+    margin-bottom: 25%;
+  }
+
+  .data th,
+  .data td {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .table-container {
+    margin-top: 20%;
+  }
+}
+
+.search input,
+.search select,
+.search button {
+  border-radius: 5px;
+  border-style: solid;
+  margin-bottom: 10px;
 }
