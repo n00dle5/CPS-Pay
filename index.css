@@ -77,7 +77,6 @@ body {
 .data td {
   padding: 10px;
   text-align: center;
-  white-space: nowrap;
 }
 
 @media only screen and (max-width: 600px) {
