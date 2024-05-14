@@ -7,6 +7,9 @@ let dataDiv = document.getElementById("data");
 
 submit.addEventListener("click", () => {
   console.log(school.value, lastname.value, job.value, fte.value);
+  dataDiv.innerHTML = `
+        <img src="loading.gif" alt="loading" style="max-width: 300px; max-height: 200px; margin: 0 auto; display: block;">
+        `;
   getPay(school, lastname, job, fte).then((data) => {
     // format the data into a table
     dataDiv.innerHTML = `
